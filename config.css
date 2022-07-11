@@ -1,0 +1,26 @@
+/*!
+ * Quara Theme by OllieJW (https://olliejw.me)
+ * License - https://olliejw.me/tos
+ */
+
+:root {
+  --dark-color: #24272b; /* Colour of dark section */
+  --dark-text-color: #fff; /* Colour of text in dark section */
+  
+  --light-color: #fff; /* Colour of light section */
+  --light-text-color: #24272b; /* Colour of text in light section */
+  
+  --button-color: #24272b; /* Colour of buttons */
+  --button-text-color: #fff; /* Colour of the text in buttons */
+  --button-hover-color: #eac271; /* Colour of button when hovered over */
+  --button-hover-text-color: #fff; /* Colour of text in button when hovered over */
+  
+  --info-color: #eac271; /* Colour of important text (Player count, IP) */
+  
+  --pinned-message-color: #222426; /* Colour pinned message section */
+  --pinned-message-text-color: #fff; /* Colour of text in pinned message section */
+  --pinned-button-color: #2e3032; /* Colour of button in pinned message section */
+  --pinned-button-text-color: #fff; /* Colour of text in button in pinned message section */
+  --pinned-button-hover-color: #eac271; /* Colour of button in pinned message section when hovered over */ 
+  --pinned-button-hover-text-color: #fff; /* Colour of text in button in pinned message section when hovered over */
+}

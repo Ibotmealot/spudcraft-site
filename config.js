@@ -4,7 +4,7 @@
  */
 
 var server_name = "SpudCraft";
-var server_ip = "129.213.100.204";
+var server_ip = "play.spudcraft.org";
 var server_port = 25565;
 var ip_copied = "IP copied!";
 

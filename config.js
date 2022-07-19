@@ -15,6 +15,7 @@ staff("TheShadow", "b4cf2224-e6dd-427f-882d-89d59a8d3447", "Administrator");
 staff("DarkLotus98", "aba060b6-4299-47da-9d30-d8c89d9255d1", "Staff");
 staff("Joesh_", "01dfe815-4b67-4fd0-a7a1-a14a64a1625c", "Staff");
 staff("A_Trapp", "8dc9cefd-7c5f-4321-bd4f-39cd440dacb7", "Staff");
+staff("Labyrinthist", "8e96503f-65f8-4bf3-b9b8-90e32c80c08e", "Staff");
 
 vote("Planet-Minecraft", "https://i.postimg.cc/9fmyrRkJ/Transparent-Planet-Minecraft-Logo.png", "https://planetminecraft.com");
 vote("Minecraft Servers Org", "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2d/Plains_Grass_Block.png", "https://minecraftservers.org/");

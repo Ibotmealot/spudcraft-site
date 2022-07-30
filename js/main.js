@@ -26,7 +26,6 @@ window.onload = function() {
   var rendered = compiled_template({
       server_name: server_name,
       server_ip: server_ip,
-	  server_port: server_port
   });
   document.getElementById('target').innerHTML = rendered;
 
@@ -34,7 +33,6 @@ window.onload = function() {
   const status_message = document.querySelector('.server-status')
   const status_container = document.querySelector('.server-status-container')
   MinecraftAPI.getServerStatus(server_ip, {
-	port: server_port
   }, function (err, status) {
 	if (err) {
 	  status_container.innerHTML = "Error getting server status of <span class='info'>" + server_ip + "</span><br><span class='info' style='color:#ff4545;font-size:.5em;'>" + err

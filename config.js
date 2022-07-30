@@ -5,7 +5,6 @@
 
 var server_name = "SpudCraft";
 var server_ip = "play.spudcraft.org";
-var server_port = 25565;
 var ip_copied = "IP copied!";
 
 var firefly_count = 20;

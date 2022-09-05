@@ -5,163 +5,221 @@
 
 <!DOCTYPE html>
 <head>
-  <title>SpudCraft</title>
-  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="title" content="SpudCraft">
-  <meta name="description" content="SpudCraft is a community brought together to share our love for Minecraft, we have developed a small, but close-knit, group that we wish to expand and grow into a safe trusting community.">
-  <meta name="keywords" content="minecraft, smp, spudcraft, spudcraft smp, community, minecraft community, family friendly minecraft">
-  <meta name="theme-color" content="#eac271">
+    <title>SpudCraft</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="title" content="SpudCraft" />
+    <meta
+        name="description"
+        content="SpudCraft is a community brought together to share our love for Minecraft, we have developed a small, but close-knit, group that we wish to expand and grow into a safe trusting community."
+    />
+    <meta
+        name="keywords"
+        content="minecraft, smp, spudcraft, spudcraft smp, community, minecraft community, family friendly minecraft"
+    />
+    <meta name="theme-color" content="#eac271" />
+    <meta
+        http-equiv="Content-Security-Policy"
+        content="upgrade-insecure-requests"
+    />
 
-  <!-- Edit this to change staff cards! -->
-  <script id="staff-template" type="text/template">
-    <div class="staff-card shrink">
-      <img src="https://mc-heads.net/avatar/{{ uuid }}">
-      <h3>{{ name }}</h3>
-      <h4>{{ rank }}</h4>
-    </div>
-  </script>
+    <!-- Edit this to change staff cards! -->
+    <script id="staff-template" type="text/template">
+        <div class="staff-card shrink">
+          <img src="https://mc-heads.net/avatar/{{ uuid }}">
+          <h3>{{ name }}</h3>
+          <h4>{{ rank }}</h4>
+        </div>
+    </script>
 
-  <script id="vote-template" type="text/template">
-    <div class="vote-card shrink shrink-dark">
-      <img src="{{ image }}">
-      <h3>{{ service }}</h3>
-      <h4><a href="{{ link }}" class="btn">Vote</a></h4>
-    </div>
-  </script>
+    <script id="vote-template" type="text/template">
+        <div class="vote-card shrink shrink-dark">
+          <img src="{{ image }}">
+          <h3>{{ service }}</h3>
+          <h4><a href="{{ link }}" class="btn">Vote</a></h4>
+        </div>
+    </script>
 
-  <!--
+    <!--
 	Notice:
 	When you make changes to config,
 	add ?v and a random number to config.css/js
 	Example: <link rel="stylesheet" href="config.css?v=100">
   -->
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-  <script src="https://mcapi.us/scripts/minecraft.min.js"></script>
-  <script src="js/fireflies.js"></script>
-  <script src="js/main.js"></script>
-  <script src="config.js"></script>
-  
-  <script>tosAgreed = true</script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="js/fireflies.js"></script>
+    <script src="js/main.js"></script>
+    <script src="config.js"></script>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins|Raleway|Quicksand">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="config.css">
+    <script>
+        tosAgreed = true
+    </script>
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Poppins|Raleway|Quicksand"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="config.css" />
 </head>
 
 <body>
+    <div id="target"></div>
 
-  <div id="target"></div>
+    <script id="template" type="text/x-handlebars-template">
+        <header>
+            <div class="hero" id="hero">
+                <h1>Welcome to {{server_name}}!</h1>
+                <h3 class="server-status-container">Join
+                    <span class="server-status info">0</span>
+                    other
+                    <span class="server-status-pluralize">players</span>
+                    on
+                    <span
+                        class="info ip"
+                        id="ip"
+                        onclick="copyIP()"
+                    >{{server_ip}}</span></h3>
+                <div id="pinned">
+                    <div class="pinned-card shrink shrink-pinned">
+                        <i class="fas fa-thumbtack"></i><strong>Pinned Notice</strong>
+                        <p>This website is still being worked on, please be
+                            paitent!</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-  <script id="template" type="text/x-handlebars-template">
+        <section id="header" class="dark">
+            <nav class="nav">
+                <ul class="nav_links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://spudcraft.tebex.io">Store</a></li>
+                    <li><a href="https://discord.gg/WwxEsqW5Qk">Discord</a></li>
+                    <li><a
+                            href="https://spudcraft.notion.site/Rules-Guidelines-7a463ccfde4e46d7a6a11d1b8f16a1dc"
+                        >Rules</a></li>
+                </ul>
+            </nav>
+        </section>
 
-  <header>
-    <div class="hero" id="hero">
-      <h1>Welcome to {{server_name}}!</h1>
-      <h3 class="server-status-container">Join <span class="server-status info">0</span> other people on <span class="info ip" id="ip" onclick="copyIP()">{{server_ip}}</span></h3>
-	  <div id="pinned">
-        <div class="pinned-card shrink shrink-pinned">
-          <i class="fas fa-thumbtack"></i><strong>Pinned Notice</strong>
-          <p>This website is still being worked on, please be paitent!</p>
-        </div>
-      </div>
-	</div>
-  </header>
+        <section class="light">
+            <p class="enlarge">
+                <strong>About us</strong>
+                Greetings!
+                {{server_name}}
+                is a community brought together to share our love for Minecraft,
+                we have developed a small, but close-knit, group that we wish to
+                expand and grow into a safe trusting community.
+            </p>
+            <p class="enlarge">
+                <strong>History</strong>
+                {{server_name}}
+                started as a small community server and the was first opened to
+                the public on March 19th, 2022. The server then reset on July
+                9th, 2022 which leads us to the second season of SpudCraft.
+            </p>
+            <p class="enlarge">
+                <strong>Join us</strong>
+                If this server seems like a good fit for you, please take your
+                time in filling out your application and be sure to be clear why
+                you think you would be a good fit for our community.
+                <br />
+                <br />
+                To apply join our discord server and apply with the form and
+                instructions in the #info channel.
+                <br />
+                <br />
+                <a href="https://discord.gg/WwxEsqW5Qk">Discord Link</a>
+            </p>
+        </section>
 
-  <section id="header" class="dark">
-    <nav class="nav">
-      <ul class="nav_links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="https://spudcraft.tebex.io">Store</a></li>
-        <li><a href="https://discord.gg/WwxEsqW5Qk">Discord</a></li>
-        <li><a href="https://spudcraft.notion.site/Rules-Guidelines-7a463ccfde4e46d7a6a11d1b8f16a1dc">Rules</a></li>
-        <li><a href="innerpage.html">Innerpage</a></li>
-      </ul>
-    </nav>
-  </section>
+        <section class="dark">
+            <h1>What makes us special</h1>
+            <div class="feature right">
+                <img src="img/feature-1.jpg" width="500px" class="enlarge" />
+                <p class="enlarge">
+                    <strong>Voice Chat</strong>
+                    Just like hermitcraft, we offer the proximity voice chat mod
+                    meaning you can chat with others in-game!
+                </p>
+            </div>
+            <hr />
+            <div class="feature left">
+                <img src="img/feature-2.jpg" width="500px" class="enlarge" />
+                <p class="enlarge">
+                    <strong>Live Map</strong>
+                    You can utilize the
+                    <a href="https://map.spudcraft.org/">live map</a>
+                    to find others, or just find a nice spot to build and call
+                    home. The map is also 3d which allows for some cool pictures
+                    of builds!
+                </p>
+            </div>
+            <hr />
+            <div class="feature right">
+                <img src="img/feature-3.jpg" width="500px" class="enlarge" />
+                <p class="enlarge">
+                    <strong>Graves</strong>
+                    Die to a mob? No worries! Your grave never expires, and can
+                    be located by doing /graves locate.
+                </p>
+            </div>
+            <hr />
+            <div class="feature left">
+                <img src="img/feature-4.jpg" width="500px" class="enlarge" />
+                <p class="enlarge">
+                    <strong>Quality of Life Changes</strong>
+                    We offer small, but wonderful, tweaks to make your
+                    experience so much better. Such as; crafting tweaks, no
+                    enderman grief, toggle pvp between others on and off, and
+                    many more!
+                </p>
+            </div>
+        </section>
 
-  <section class="light">
-    <p class="enlarge">
-      <strong>About us</strong>
-      Greetings! {{server_name}} is a community brought together to share our love for Minecraft,
-      we have developed a small, but close-knit, group that we wish to expand and grow into a safe trusting community.
-    </p>
-    <p class="enlarge">
-      <strong>History</strong>
-      {{server_name}} started as a small community server and the was first opened to the public on March 19th, 2022. The server then reset on July 9th, 2022 which leads us to the second season of SpudCraft. 
-    </p>
-    <p class="enlarge">
-      <strong>Join us</strong>
-      If this server seems like a good fit for you, please take your time in filling out your application and be sure to be clear why you think you would be a good fit for our community.
-      <br>
-      <br>
-      To apply join our discord server and apply with the form and instructions in the #info channel.
-      <br>
-      <br>
-      <a href="https://discord.gg/WwxEsqW5Qk">Discord Link</a>
-    </p>
-  </section>
+        <section class="light">
+            <h1>Our staff team</h1>
+            <div id="staff" class="grid"></div>
+        </section>
 
-  <section class="dark">
-    <h1>What makes us special</h1>
-    <div class="feature right">
-      <img src="img/feature-1.jpg" width="500px" class="enlarge">
-      <p class="enlarge">
-        <strong>Voice Chat</strong>
-        Just like hermitcraft, we offer the proximity voice chat mod meaning you can chat with others in-game!
-      </p>
-    </div>
-    <hr>
-    <div class="feature left">
-      <img src="img/feature-2.jpg" width="500px" class="enlarge">
-      <p class="enlarge">
-        <strong>Live Map</strong>
-        You can utilize the <a href="https://map.spudcraft.org/">live map</a> to find others, or just find a nice spot to build and call home. The map is also 3d which allows for some cool pictures of builds! 
-      </p>
-    </div>
-    <hr>
-    <div class="feature right">
-      <img src="img/feature-3.jpg" width="500px" class="enlarge">
-      <p class="enlarge">
-        <strong>Graves</strong>
-        Die to a mob? No worries! Your grave never expires, and can be located by doing /graves locate. 
-      </p>
-    </div>
-    <hr>
-    <div class="feature left">
-      <img src="img/feature-4.jpg" width="500px" class="enlarge">
-      <p class="enlarge">
-        <strong>Quality of Life Changes</strong>
-        We offer small, but wonderful, tweaks to make your experience so much better. Such as; crafting tweaks, no enderman grief, toggle pvp between others on and off, and many more! 
-      </p>
-    </div>
-  </section>
+        <section class="dark">
+            <h1>News and announcements</h1>
+            <div id="news">
+                <div class="news-card">
+                    <strong>Example Announcement</strong>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Proin ornare viverra accumsan. Fusce scelerisque a augue
+                        eu mollis. Praesent eu sollicitudin felis. Proin risus
+                        nulla, volutpat posuere lorem sit amet.</p>
+                    <p>Praesent mollis, diam at vestibulum sodales, mi metus
+                        sagittis sem, et lobortis nulla dui nec leo. Mauris at
+                        metus tellus. Ut malesuada augue nec nisi. endrerit
+                        placerat dui. Morbi nec nisl quis est mattis facilisis
+                        ut quis enim.</p>
+                    <a href="#" class="btn">Read more</a>
+                </div>
+            </div>
+        </section>
 
-  <section class="light">
-    <h1>Our staff team</h1>
-    <div id="staff" class="grid"></div>
-  </section>
-
-  <section class="dark">
-    <h1>News and announcements</h1>
-    <div id="news">
-      <div class="news-card">
-        <strong>Example Announcement</strong>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare viverra accumsan. Fusce scelerisque a augue eu mollis. Praesent eu sollicitudin felis. Proin risus nulla, volutpat posuere lorem sit amet.</p>
-        <p>Praesent mollis, diam at vestibulum sodales, mi metus sagittis sem, et lobortis nulla dui nec leo. Mauris at metus tellus. Ut malesuada augue nec nisi. endrerit placerat dui. Morbi nec nisl quis est mattis facilisis ut quis enim.</p>
-        <a href="#" class="btn">Read more</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="light">
-    <h1>Get Social</h1>
-    <div class="buttons">
-      <a href="https://discord.gg/WwxEsqW5Qk" class="btn">Discord</a>
-      <a href="https://www.tiktok.com/@spudcraftsmp" class="btn">TikTok</a>
-    </div>
-  </section>
+        <section class="light">
+            <h1>Get Social</h1>
+            <div class="buttons">
+                <a href="https://discord.gg/WwxEsqW5Qk" class="btn">Discord</a>
+                <a
+                    href="https://www.tiktok.com/@spudcraftsmp"
+                    class="btn"
+                >TikTok</a>
+            </div>
+        </section>
+    </script>
 </body>

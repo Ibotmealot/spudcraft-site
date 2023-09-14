@@ -13,7 +13,7 @@ staff("Ibotmealot", "a768e7e5-59af-43b2-b871-8374947a27e4", "Owner");
 staff("A_Trapp", "8dc9cefd-7c5f-4321-bd4f-39cd440dacb7", "Administrator");
 staff("Labyrinthist", "8e96503f-65f8-4bf3-b9b8-90e32c80c08e", "Administrator");
 staff("softshadows", "b4cf2224-e6dd-427f-882d-89d59a8d3447", "Administrator");
-staff("OccasionallyAsh", "07eade2a-b5c8-4dad-b3cb-b5821bbdf905", "Staff");|
+staff("OccasionallyAsh", "07eade2a-b5c8-4dad-b3cb-b5821bbdf905", "Staff");
 staff(".Karasu0w0", "00000000-0000-0000-0009-01f800442661", "Staff");
 staff("PeskyBird58", "093b12b6-4093-4ffd-aeed-9a2390d7d3d5", "Staff");
 
